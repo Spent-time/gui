@@ -1,0 +1,75 @@
+/* TitlePane 
+ * 
+ * Styling TitlePane means styling the TitlePane title and its content container  (dijitTitlePane)
+ * 
+ * TitlePane title:
+ * 1. TitlePane title (default styling): 
+ * 		.dijitTitlePaneTitle - TitlePane's title div style: background-color, border
+ *
+ * 2. hovered TitlePane title (ie, mouse hover on a title bar)
+ * 		.dijitTitlePaneTitleHover - styles when mouse hover on the title div
+ * 
+ * 3. active TitlePane title (ie, mouse down on a title bar)
+ * 		.dijitTitlePaneTitleActive - styles when mouse down on the title div
+ * 
+ * 
+ * TitlePane Content Container:
+ * 1. outer/inner container: 
+ * 		.dijitTitlePaneContentOuter / dijitTitlePaneContentInner - styles for the content outer div
+ */
+.dijitTitlePaneTitle {
+    padding: 8px 12px;
+    line-height: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dijitTitlePaneTitle:hover {
+    outline: none;
+}
+
+.dijitTitlePaneTitleFocus {
+    outline: none;
+}
+
+.dijitTitlePaneContentInner {
+
+}
+
+.dijitTitlePaneContentInner .appMenu {
+    list-style: none;
+    margin-top: 0;
+}
+
+.dijitTitlePaneContentInner .appMenuEntry {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.dijitTitlePaneContentInner .appMenuEntry:hover {
+    outline: none;
+}
+
+.dijitTitlePaneTextNode {
+    margin-left: 8px;
+    margin-right: 8px;
+    vertical-align: text-top;
+    outline: none;
+}
+
+.dijitTitlePane .dijitArrowNode {
+    font-family: FontAwesome;
+    float: right;
+}
+
+.dijitTitlePane .dijitArrowNode:before {
+    content: "\f077";
+    font-size: 10px;
+}
+
+.dijitTitlePane .dijitClosed .dijitArrowNode:before {
+    content: "\f053";
+}
+
+

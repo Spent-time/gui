@@ -1,0 +1,213 @@
+<div>
+
+    <script type="dojo/require">at: "dojox/mvc/at"</script>
+
+    <div data-dojo-type="dijit/layout/BorderContainer"
+         data-dojo-props="liveSplitters: false">
+
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+
+            <div class="template">
+
+                <div class="left">
+                    <span class="header">${i18n.itemTracker.header}</span>
+                    <span class="title">${i18n.itemTracker.title}</span>
+
+                    <div id="itemSelectionMenu">
+                        <div class="iconButton">
+                            <div data-dojo-attach-point="itemSelectionOK" class="fa fa-check"></div>
+                        </div>
+                        <div class="iconButton">
+                            <div data-dojo-attach-point="itemSelectionCancel" class="fa fa-ban"></div>
+                        </div>
+                        <div class="iconButton">
+                            <div data-dojo-attach-point="itemSelectionRemove" class="fa fa-eraser"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'" class="itemTrackerBrowser">
+
+            <div class="trackerTreeWrapper">
+                <div data-dojo-attach-point="itemTrackerTree" id="itemTrackerTree"></div>
+            </div>
+
+        </div>
+
+        <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center'">
+
+
+            <div data-dojo-type="dijit/layout/ContentPane" id="root">
+
+                <div class="available">${i18n.itemTracker.trackers.available}</div>
+
+                <div class="available-icon">
+                    <span class="icon-spent-time fa-4x"></span>
+                </div>
+
+                <div class="coming">${i18n.itemTracker.trackers.coming}</div>
+
+                <div class="coming-icon">
+                    <span class="fa fa-github fa-4x"></span>
+                </div>
+
+                <div class="coming-icon">
+                    <span class="fa fa-bitbucket fa-4x"></span>
+                </div>
+                <div class="coming-icon">
+                    <span class="fa fa-trello fa-4x"></span>
+                </div>
+                <div class="coming-icon">
+                    <span class="icon-podio fa-4x"></span>
+                </div>
+
+                <div class="welcome">${!i18n.itemTracker.trackers.welcome}</div>
+
+            </div>
+
+            <div data-dojo-type="dijit/layout/ContentPane" id="tracker">
+                <span class="icon-spent-time fa-4x"></span>
+            </div>
+
+            <div data-dojo-type="dijit/layout/ContentPane" id="item" class="trackerItem">
+
+                <div class="form" data-dojo-attach-point="color">
+
+                    <div data-dojo-type="dijit/form/DropDownButton"
+                         data-dojo-props="iconClass:'dijitIcon dijitEditorIcon dijitEditorIconHiliteColor'"
+                         id="projectColor"
+                         data-dojo-attach-point="projectColor">
+                        <span></span>
+
+                        <div data-dojo-type="dijit/TooltipDialog">
+                            <table id="colorPalette" data-dojo-attach-point="colorPalette">
+                                <tr>
+                                    <td><span id="Calendar1" class="fa fa-square fa-3x Calendar1 dijitIcon"></span></td>
+                                    <td><span id="Calendar2" class="fa fa-square fa-3x Calendar2 dijitIcon"></span></td>
+                                    <td><span id="Calendar3" class="fa fa-square fa-3x Calendar3 dijitIcon"></span></td>
+                                    <td><span id="Calendar4" class="fa fa-square fa-3x Calendar4 dijitIcon"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="Calendar8" class="fa fa-square fa-3x Calendar8 dijitIcon"></span></td>
+                                    <td><span id="Calendar7" class="fa fa-square fa-3x Calendar7 dijitIcon"></span></td>
+                                    <td><span id="Calendar6" class="fa fa-square fa-3x Calendar6 dijitIcon"></span></td>
+                                    <td><span id="Calendar5" class="fa fa-square fa-3x Calendar5 dijitIcon"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="Calendar9" class="fa fa-square fa-3x Calendar9 dijitIcon"></span></td>
+                                    <td>
+                                        <span id="Calendar10" class="fa fa-square fa-3x Calendar10 dijitIcon"></span>
+                                    </td>
+                                    <td>
+                                        <span id="Calendar11" class="fa fa-square fa-3x Calendar11 dijitIcon"></span>
+                                    </td>
+                                    <td>
+                                        <span id="Calendar12" class="fa fa-square fa-3x Calendar12 dijitIcon"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span id="Calendar16" class="fa fa-square fa-3x Calendar16 dijitIcon"></span>
+                                    </td>
+                                    <td>
+                                        <span id="Calendar15" class="fa fa-square fa-3x Calendar15 dijitIcon"></span>
+                                    </td>
+                                    <td>
+                                        <span id="Calendar14" class="fa fa-square fa-3x Calendar14 dijitIcon"></span>
+                                    </td>
+                                    <td>
+                                        <span id="Calendar13" class="fa fa-square fa-3x Calendar13 dijitIcon"></span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <input data-dojo-attach-point="colorValue"
+                           data-dojo-type="dijit/form/TextBox"
+                           data-dojo-props="value: at(this.item, 'color')" type="hidden">
+
+                </div>
+
+                <div class="form" data-dojo-attach-point="label">
+                    <input class="labelInput"
+                           data-dojo-type="dijit/form/TextBox"
+                           data-dojo-props="value: at(this.item, 'label')">
+                </div>
+
+                <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="nested:true"
+                     class="itemTabs">
+
+                    <div data-dojo-type="dijit/layout/ContentPane"
+                         data-dojo-props="title:this.i18n.itemTracker.details.tags">
+
+                        <div class="tagContainer"
+                             data-dojo-attach-point="tagContainer"
+                             data-dojo-props=""
+                             data-dojo-type="dojo/dnd/Target">
+                        </div>
+
+                        <div class="tagPaletteContainerOuter">
+
+                            <span class="fa fa-plus" data-dojo-attach-point="addTag"></span>
+
+                            <div id="tagPalette" class="tagPaletteContainer invisible">
+
+                                <div data-dojo-type="dojo/dnd/Source"
+                                     data-dojo-props="copyOnly: true, accept:''"
+                                     class="tagPalette">
+                                    <div class="dojoDndItem tag">
+                                        <div class="tagRemove"><span class="fa fa-times"></span></div>
+                                        <div class="tagKey" type="string">${i18n.itemTracker.tags.string}</div>
+                                        <div class="tagValue">A text value</div>
+                                    </div>
+                                    <div class="dojoDndItem tag">
+                                        <div class="tagRemove"><span class="fa fa-times"></span></div>
+                                        <div class="tagKey" type="number">${i18n.itemTracker.tags.number}</div>
+                                        <div class="tagValue">0</div>
+                                    </div>
+                                    <div class="dojoDndItem tag">
+                                        <div class="tagRemove"><span class="fa fa-times"></span></div>
+                                        <div class="tagKey" type="boolean">${i18n.itemTracker.tags.boolean}</div>
+                                        <div class="tagValue">Yes/No</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div data-dojo-type="dijit/layout/ContentPane"
+                         data-dojo-props="title:this.i18n.itemTracker.details.description, selected:true">
+
+                        <div class="form" data-dojo-attach-point="description">
+                            <div class="itemTextEditor"
+                                 data-dojo-type="dijit/Editor"
+                                 data-dojo-props="value: at(this.item, 'description'), plugins :['bold','italic','underline'],  extraPlugins:[ '|', 'foreColor','hiliteColor', '|', 'fontName', 'fontSize' ]">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <a href="https://spent-time.com/docs/item-tracking/Item-tracker-help" target="_blank"><span
+                class="fa fa-question-circle help-icon item"></span></a>
+    </div>
+
+</div>

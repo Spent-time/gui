@@ -1,0 +1,104 @@
+.guide .title {
+
+    padding-top: 30px;
+    font-size: 2em;
+    color: #fff;
+}
+
+.guide .text {
+
+    font-size: 1.2em;
+    color: #fff;
+    margin: 15px;
+}
+
+.guide .buttons {
+
+    padding-top: 0;
+}
+
+.guide .dijitButton {
+
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.guide .dijitButton .dijitButtonNode {
+
+    border: 1px solid #1960d2;
+    border-radius: 5px;
+}
+
+.guide .dijitButtonNode:active {
+
+    background-color: unset;
+}
+
+.pointer1.time .pointer {
+    position: absolute;
+    top: 110px;
+    left: 249px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid #1974d2;
+}
+
+.pointer1.time .guide {
+    background-color: #1974d2;
+    position: absolute;
+    left: 70px;
+    top: 150px;
+    text-align: center;
+    border-radius: 500px;
+    width: 250px;
+    height: 250px;
+    z-index: 9999;
+}
+
+.pointer2.time .pointer {
+    position: absolute;
+    top: -25px;
+    left: 100px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 30px solid #1974d2;
+}
+
+.pointer2.time .title {
+
+    padding-top: 45px;
+}
+
+.pointer2.time .guide {
+    background-color: #1974d2;
+    position: absolute;
+    right: 80px;
+    top: 130px;
+    text-align: center;
+    border-radius: 500px;
+    width: 250px;
+    height: 250px;
+    z-index: 9999;
+}
+
+.pointer3.time .title {
+
+    padding-top: 45px;
+}
+
+.pointer3.time .guide {
+    background-color: #1974d2;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+    border-radius: 500px;
+    width: 250px;
+    height: 250px;
+    z-index: 9999;
+}

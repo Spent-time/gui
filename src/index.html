@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Spent time</title>
+    <link rel="stylesheet" href="apps/shared/css/styles.css">
+</head>
+
+<body id="app-container">
+<div id="load"></div>
+<div id="loader">
+    <div id="loaderProgressBar" align="center">
+        <div id="loaderMessage">
+            <i class="fa icon-spent-time"></i>
+            <span class="brand-name1">Spent</span>
+            <span class="brand-name2"> time</span>
+        </div>
+        <div id="loaderMessage2">
+            <span class="fa fa-refresh fa-spin"></span>
+        </div>
+    </div>
+</div>
+
+<div id="login">
+
+    <div class="form">
+
+        <div class="logo">
+            <span class="icon-spent-time"></span>
+            <span class="brand-name1"> Spent</span>
+            <span class="brand-name2"> time</span>
+        </div>
+
+        <div id="sign-in-form">
+            <div class="social" id="social-form">
+
+                <span class="sign-in">Sign in with the service of your choice </span>
+
+                <span id="github-signin" class="fa fa-github"></span>
+
+                <span id="bitbucket-signin" class="fa fa-bitbucket"></span>
+
+                <span id="slack-signin" class="fa fa-slack"></span>
+
+                <span id="trello-signin" class="fa fa-trello"></span>
+
+                <span id="facebook-signin" class="fa fa-facebook"></span>
+
+                <span id="google-signin" class="fa fa-google"></span>
+
+                <span id="linkedin-signin" class="fa fa-linkedin"></span>
+
+                <span id="podio-signin" class="icon-podio"></span>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div data-dojo-type="dijit/layout/BorderContainer" class="application" id="application"
+     data-dojo-props="liveSplitters: false">
+
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'" id="left" class="collapsed">
+        <div id="collapse-menu">
+            <span class="icon-spent-time" id="menu-expand"></span>
+            <span class="brand-name1"> Spent</span>
+            <span class="brand-name2"> time</span>
+        </div>
+        <div id="menu">
+
+            <div id="apps">
+                <span class="header" id="apps_menu"></span>
+            </div>
+
+            <div id="more">
+                <span class="header" id="more_menu"></span>
+            </div>
+
+            <div id="feedback">
+                <span class="fa fa-comments"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="feedback-menu" class="invisible">
+        <div class="feedback-option" id="feedback-draw">
+            <span class="fa fa-camera"></span>
+        </div>
+        <div class="feedback-option" id="feedback-comment">
+            <span class="fa fa-comment"></span>
+        </div>
+    </div>
+
+    <div data-dojo-type="dijit/layout/BorderContainer" id="center"
+         data-dojo-props="liveSplitters: false, region:'center'">
+
+        <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center'"
+             id="appContainer">
+        </div>
+
+    </div>
+
+</div>
+
+<div id="screenshot" class="pencil"></div>
+<div id="drawing-toolbar" class="invisible">
+    <div class="move-handle">...</div>
+    <div class="drawing-option">
+        <span id="draw-free" class="fa fa-paint-brush"></span>
+    </div>
+    <div class="drawing-option">
+        <span id="draw-trash" class="fa fa-trash-o"></span>
+    </div>
+    <div class="drawing-option">
+        <span id="draw-ready" class="fa fa-check"></span>
+    </div>
+</div>
+
+<div id="feedback-send" class="invisible">
+    <div class="field">
+        <textarea data-dojo-type="dijit/form/Textarea" id="feedback-message"
+                  data-dojo-props="placeholder: 'Your feedback message'"></textarea>
+    </div>
+    <div class="thumbnail">
+        <img id="feedback-image" src="" class="invisible">
+    </div>
+    <div class="buttons">
+        <span id="send-message" class="fa fa-send"></span>
+        <span id="trash-message" class="fa fa-trash"></span>
+        <div class="fileUpload fa fa-paperclip">
+            <input id="upload_file" type="file" class="upload" accept="image/*"/>
+        </div>
+    </div>
+</div>
+
+
+<div id="message" class="closed">
+
+    <div class="info invisible" id="level-info">
+        <div class="fa fa-info-circle"></div>
+    </div>
+    <div class="warn invisible" id="level-warn">
+        <div class="fa fa-exclamation-triangle"></div>
+    </div>
+    <div class="error invisible" id="level-error">
+        <div class="fa fa-exclamation-circle"></div>
+    </div>
+
+    <div class="close" id="closeMessage">
+        <div class="fa fa-times"></div>
+    </div>
+
+    <div id="message-title">This is the title of a message</div>
+    <div id="message-text">Some text here where we tell the user what is going on</div>
+
+</div>
+
+<script>
+    var dojoConfig = {
+        async: true,
+        baseUrl: '.',
+        isDebug: true,
+        packages: [
+            'apps',
+            'dgrid',
+            'dijit',
+            'dojo',
+            'dojox'
+        ],
+        selectorEngine: 'lite',
+        tlmSiblingOfDojo: false,
+        cacheBust: true,
+        parseOnLoad: true,
+        locale: 'en'
+    };
+</script>
+<script src="dojo/dojo.js"></script>
+<script>require(['apps/main']);</script>
+<script>
+    if (window.location.hostname != 'localhost') {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-82472122-2', 'auto');
+        ga('send', 'pageview');
+
+        function ga_heartbeat() {
+            console.info('ga heartbeat ' + window.userId);
+            ga('send', 'event', 'heartbeat', window.userId);
+            setTimeout(ga_heartbeat, 5 * 60 * 1000);
+        }
+
+        ga_heartbeat();
+    }
+</script>
+</body>
+</html>

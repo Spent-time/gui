@@ -1,0 +1,84 @@
+<div>
+
+    <div data-dojo-attach-point="pointer1" class="pointer1 time invisible">
+
+        <div class="guide">
+            <div class="title">
+                ${i18n.timeTracker.pointer.1.title}
+            </div>
+            <div class="pointer"></div>
+            <div class="text">
+                <p>
+                    ${i18n.timeTracker.pointer.1.text}
+                </p>
+            </div>
+            <div class="buttons">
+                <button data-dojo-type="dijit/form/Button" data-dojo-attach-point="ok1">${i18n.timeTracker.pointer.ok}
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-dojo-attach-point="pointer2" class="pointer2 time invisible">
+
+        <div class="guide">
+            <div class="title">
+                ${i18n.timeTracker.pointer.2.title}
+            </div>
+            <div class="pointer"></div>
+            <div class="text">
+                <p>
+                    ${i18n.timeTracker.pointer.2.text}
+                </p>
+            </div>
+            <div class="buttons">
+                <button data-dojo-type="dijit/form/Button" data-dojo-attach-point="ok2">${i18n.timeTracker.pointer.ok}
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-dojo-attach-point="pointer3" class="pointer3 time invisible">
+
+        <div class="guide">
+            <div class="title">
+                ${i18n.timeTracker.pointer.3.title}
+            </div>
+            <div class="pointer"></div>
+            <div class="text">
+                <p>
+                    ${i18n.timeTracker.pointer.3.text}
+                </p>
+            </div>
+            <div class="buttons">
+                <button data-dojo-type="dijit/form/Button" data-dojo-attach-point="ok3">${i18n.timeTracker.pointer.ok}
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="template">
+
+        <div class="left">
+            <span class="header">${i18n.timeTracker.header}</span>
+            <span class="title">${i18n.timeTracker.title}</span>
+        </div>
+
+    </div>
+
+    <div data-dojo-attach-point="calendar">
+        <div data-dojo-type="dijit/Menu" data-dojo-attach-point="contextMenu" style="display: none;">
+            <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="itemDelete"
+                 data-dojo-props="iconClass:'dijitIcon dijitIconDelete'">Delete
+            </div>
+        </div>
+    </div>
+
+    <a href="https://spent-time.com/docs/time-tracking/Time-tracker-help" target="_blank"><span
+            class="fa fa-question-circle help-icon time"></span></a>
+
+</div>

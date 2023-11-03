@@ -1,0 +1,258 @@
+
+.mblSwitch {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    height: 27px;
+    line-height: 29px;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer;
+}
+
+.mblListItem .mblSwitch {
+    position: absolute;
+    right: 12px;
+    top: 11.5px;
+}
+
+.mblSwitchInner {
+    position: absolute;
+    top: 0;
+    height: 27px;
+}
+
+.mblSwitchAnimation .mblSwitchInner {
+    -webkit-transition-property: left;
+    transition-property: left;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.mblSwitchOn .mblSwitchInner {
+    left: 0;
+}
+
+.mblSwitchBg {
+    position: absolute;
+    top: 0;
+    height: 27px;
+    line-height: 29px;
+}
+
+.mblSwitchKnob {
+    position: absolute;
+    top: 0;
+    height: 27px;
+}
+
+.mblSwitchText {
+    position: relative;
+    top: 0;
+    height: 27px;
+    /*! padding: 0; */
+    line-height: 28px;
+    text-align: center;
+}
+
+.mblSwitchTextLeft {
+    left: 0;
+}
+
+.mblSwitchTextRight {
+    left: 40px;
+}
+
+/* Square Shape */
+.mblSwSquareShape {
+}
+
+.mblSwSquareShape.mblSwitchOff .mblSwitchInner {
+    left: -53px;
+}
+
+.mblSwSquareShape .mblSwitchBg {
+    border-radius: 0px;
+}
+
+.mblSwSquareShape .mblSwitchBgRight {
+    left: 53px;
+}
+
+.mblSwSquareShape .mblSwitchKnob {
+    left: 53px;
+    border-radius: 0px;
+}
+
+.mblSwSquareShape .mblSwitchText {
+
+}
+
+.mblSwSquareShape .mblSwitchTextRight {
+    left: 40px;
+}
+
+/* Round Shape1 */
+.mblSwRoundShape1 {
+
+}
+
+.mblSwRoundShape1.mblSwitchOff .mblSwitchInner {
+    left: -50px;
+}
+
+.mblSwRoundShape1 .mblSwitchBg {
+
+    border-radius: 14px;
+}
+
+.mblSwRoundShape1 .mblSwitchBgRight {
+    left: 50px;
+}
+
+.mblSwRoundShape1 .mblSwitchKnob {
+    left: 50px;
+    border-radius: 13px;
+}
+
+.mblSwRoundShape1 .mblSwitchText {
+    width: 50px;
+}
+
+.mblSwRoundShape1 .mblSwitchTextRight {
+
+}
+
+/* Round Shape2 */
+.mblSwRoundShape2 {
+
+}
+
+.mblSwRoundShape2.mblSwitchOff .mblSwitchInner {
+    left: -51px;
+}
+
+.mblSwRoundShape2 .mblSwitchBg {
+    border-radius: 14px;
+}
+
+.mblSwRoundShape2 .mblSwitchBgRight {
+    left: 51px;
+}
+
+.mblSwRoundShape2 .mblSwitchKnob {
+    left: 51px;
+    border-radius: 13px;
+}
+
+.mblSwRoundShape2 .mblSwitchText {
+
+}
+
+.mblSwRoundShape2 .mblSwitchTextRight {
+    left: 42px;
+}
+
+/* Arc Shape1 */
+.mblSwArcShape1 {
+
+}
+
+.mblSwArcShape1.mblSwitchOff .mblSwitchInner {
+    left: -50px;
+}
+
+.mblSwArcShape1 .mblSwitchBg {
+    border-radius: 5px/14px;
+}
+
+.mblSwArcShape1 .mblSwitchBgRight {
+    left: 50px;
+}
+
+.mblSwArcShape1 .mblSwitchKnob {
+    left: 50px;
+    border-radius: 5px/13px;
+}
+
+.mblSwArcShape1 .mblSwitchText {
+
+}
+
+.mblSwArcShape1 .mblSwitchTextRight {
+    left: 26px;
+}
+
+/* Arc Shape2 */
+.mblSwArcShape2 {
+
+}
+
+.mblSwArcShape2.mblSwitchOff .mblSwitchInner {
+    left: -51px;
+}
+
+.mblSwArcShape2 .mblSwitchBg {
+    border-radius: 5px/14px;
+}
+
+.mblSwArcShape2 .mblSwitchBgRight {
+    left: 51px;
+}
+
+.mblSwArcShape2 .mblSwitchKnob {
+    left: 51px;
+    border-radius: 5px/13px;
+}
+
+.mblSwArcShape2 .mblSwitchText {
+
+}
+
+.mblSwArcShape2 .mblSwitchTextRight {
+    left: 42px;
+}
+
+/* Default Shape */
+.mblSwDefaultShape {
+    width: 77px;
+}
+
+.mblSwDefaultShape.mblSwitchOff .mblSwitchInner {
+    left: -50px;
+}
+
+.mblSwDefaultShape .mblSwitchBg {
+    width: 77px;
+    border-radius: 14px;
+}
+
+.mblSwDefaultShape .mblSwitchBgRight {
+    left: 50px;
+}
+
+.mblSwDefaultShape .mblSwitchKnob {
+    left: 50px;
+    width: 27px;
+    border-radius: 13px;
+}
+
+.mblSwDefaultShape .mblSwitchText {
+    width: 50px;
+}
+
+.mblSwDefaultShape .mblSwitchTextRight {
+    left: 26px;
+}
+
+.mblSwitchKnob {
+    background: #1974d2 none;
+}
+
+.mblSwitchBgLeft {
+    background: #30343E none;
+}
+
+.mblSwitchBgRight {
+    background: #30343E none;
+}

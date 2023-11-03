@@ -1,0 +1,123 @@
+/* Toolbar 
+ * 
+ * Styling Toolbar means styling the toolbar container and the widget inside toolbar  (dijitToolbar)
+ * 
+ * 1. toolbar (default styling): 
+ * 		.dijitToolbar - styles for outer container
+ *
+ * 2. widget inside toolbar
+ * 		.dijitToolbar .dijitButtonNode   - Button widget
+ * 					  .dijitComboButton  - ComboButton widget
+ * 					  .dijitDropDownButton  - DropDownButton widget
+ * 					  .dijitToggleButton  - ToggleButton widget
+ * 		
+ * 3. hovered widget inside toolbar (ie, mouse hover on the widget inside)
+ * 			.dijitToolbar .dijitButtonNodeHover  - styles for hovered Button widget
+ * 
+ * 4. actived widget inside toolbar (ie, mouse down on the widget inside)
+ * 			.dijitToolbar .dijitButtonNodeActive  - mouse down on Button widget
+ */
+.dijitToolbar {
+    padding: 4px;
+    zoom: 1;
+    border: 1px solid #1974d2;
+    border-radius: 5px;
+    background-color: #252830;
+}
+
+.dijitToolbar .dijitButton.selected .dijitButtonNode {
+
+    color: #fff;
+    background-color: #1974d2;
+    border-radius: 3px;
+    cursor: default !important;
+}
+
+.dijitToolbar label {
+    padding: 8px;
+}
+
+.dijitToolbar .dijitToggleButton,
+.dijitToolbar .dijitButton,
+.dijitToolbar .dijitDropDownButton,
+.dijitToolbar .dijitComboButton {
+}
+
+.dijitToolbar .dijitButton .dijitButtonNode,
+.dijitToolbar .dijitDropDownButton .dijitButtonNode,
+.dijitToolbar .dijitComboButton .dijitButtonNode,
+.dijitToolbar .dijitToggleButton .dijitButtonNode,
+.dijitToolbar .dijitComboBox .dijitButtonNode {
+    border: 1px solid transparent;
+    padding: 4px;
+    border-radius: 2px;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.dijitToolbar .dijitComboButton .dijitStretch {
+    /* no rounded border on side adjacent to arrow */
+    border-radius: 2px 0 0 2px;
+}
+
+.dijitToolbar .dijitComboButton .dijitArrowButton {
+    /* no rounded border on side adjacent to button */
+    border-radius: 0 2px 2px 0;
+}
+
+.dijitToolbar .dijitComboBox .dijitButtonNode {
+    padding: 0 8px;
+}
+
+.dijitToolbar .dijitComboBox .dijitInputInner {
+    padding: 0;
+}
+
+.dijitToolbar .dijitDropDownButton .dijitArrowButtonInner {
+    margin-left: 4px;
+}
+
+.dijitToolbar .dijitButton:hover {
+    background-color: #434857;
+    border-radius: 3px;
+}
+
+.dijitToolbar .dijitButtonHover .dijitButtonNode,
+.dijitToolbar .dijitDropDownButtonHover .dijitButtonNode,
+.dijitToolbar .dijitToggleButtonHover .dijitButtonNode,
+.dijitToolbar .dijitComboButtonHover .dijitButtonNode {
+    transition: all 0.1s;
+
+}
+
+.dijitToolbar .dijitButton.selected:hover {
+
+    background-color: #1974d2;
+
+}
+
+.dijitToolbar .dijitButtonActive .dijitButtonNode,
+.dijitToolbar .dijitDropDownButtonActive .dijitButtonNode,
+.dijitToolbar .dijitToggleButtonActive .dijitButtonNode {
+    transition: none;
+    outline: none;
+}
+
+.dijitToolbar .dijitToggleButtonChecked .dijitButtonNode {
+    transition: none;
+    outline: none;
+}
+
+/* Separator */
+.dijitToolbarSeparator {
+    width: 1px;
+    height: 20px;
+    background: #434857;
+    padding: 0;
+    margin: 0 4px;
+}
+
+/* Toolbar inside of disabled Editor */
+.dijitDisabled .dijitToolbar {
+    border-bottom: 1px solid #d0d0d0;
+}

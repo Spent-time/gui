@@ -1,0 +1,32 @@
+{
+  "general": {
+    "locale": {
+      "language": "en"
+    }
+  },
+  "timeTracker": {
+    "pointer": 1,
+    "duration": {
+      "firstDayOfWeek": "-1",
+      "startTimeOfDay": {
+        "hours": 9,
+        "minutes": 0
+      },
+      "minHours": 8,
+      "maxHours": 18,
+      "minDuration": 60,
+      "minDurationUnit": "minute",
+      "minDurationSteps": 1,
+      "minDurationStepsUnit": "minute"
+    },
+    "grid": {
+      "dateInterval": "week",
+      "snapSteps": 5,
+      "snapUnit": "minute",
+      "showTimeIndicator": true,
+      "timeIndicatorRefreshInterval": "1",
+      "rowHeaderTimePattern": "browser",
+      "columnHeaderDatePattern": "browser"
+    }
+  }
+}

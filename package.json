@@ -1,0 +1,23 @@
+{
+  "name": "spent-time-gui",
+  "version": "0.0.1",
+  "description": "",
+  "license": "@todo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spent-time/gui.git"
+  },
+  "devDependencies": {
+    "intern": "3.0.6",
+    "stylus": "0.54.5",
+    "jsdoc": "3.4.0",
+    "grunt-cli": "1.2.0"
+  },
+  "bugs": "https://groups.google.com/a/spent-time.com/forum/#!forum/spent-time",
+  "keywords": [
+  ],
+  "homepage": "https://spent-time.com",
+  "dependencies": {
+    "zxcvbn": "^4.3.0"
+  }
+}

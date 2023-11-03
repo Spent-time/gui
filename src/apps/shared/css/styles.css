@@ -1,0 +1,1484 @@
+@import 'flat/calendar/Calendar.css';
+@import 'flat/css/flat.css';
+@import 'flat/dgrid/css/dgrid.css';
+@import 'spent-time/spent-time.css';
+@import 'spent-time/pointer.css';
+@import 'font/ubuntu.css';
+@import 'mobile/Switch.css';
+@import '../../../dojox/layout/resources/ExpandoPane.css';
+
+/**
+ * General application wide styling
+ */
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #cfd2da;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+#message {
+
+    text-align: center;
+    position: absolute;
+    bottom: -5px;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    border-top: 1px solid #434857;
+    background-color: #252830;
+    max-height: 250px;
+    transition-property: all;
+    transition-duration: 1.2s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    pointer-events: all;
+}
+
+#message.closed {
+
+    border: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+#message .close {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#message .info {
+
+    float: left;
+    font-size: 5em;
+    color: #fff;
+    background-color: #1974d2;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#message .warn {
+
+    float: left;
+    font-size: 5em;
+    color: #fff;
+    background-color: #ffa000;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#message .error {
+
+    float: left;
+    font-size: 5em;
+    color: #fff;
+    background-color: #d32f2f;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#message-title {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-size: 2.2em;
+    z-index: 0;
+}
+
+#message-text {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: 1.5em;
+    z-index: 0;
+}
+
+#load {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    width: 0;
+    height: 4px;
+    background-color: #1974d2;
+}
+
+* {
+    outline: 0 !important;
+}
+
+.help-icon {
+
+    color: #cfd2da;
+    cursor: pointer;
+    font-size: 2em;
+    z-index: 9999;
+}
+
+.help-icon:hover {
+
+    transform: scale(1.3)
+}
+
+.help-icon.time {
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
+}
+
+.help-icon.item {
+    position: absolute;
+    bottom: 1px;
+    right: 3px;
+}
+
+.help-icon.reports {
+    position: absolute;
+    bottom: 1px;
+    right: 3px;
+}
+
+.logout .fa {
+
+    font-size: 2.5em;
+}
+
+.logout span {
+
+    width: 45px;
+    height: 40px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 6px;
+    padding-left: 3px;
+}
+
+.logout .fa:hover {
+
+    background-color: #454857;
+
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.inline {
+
+    display: inline;
+}
+
+.short-label {
+
+    width: 50px !important;
+    padding-left: 10px;
+}
+
+.invisible {
+
+    display: none;
+}
+
+.dijitDisabled {
+
+    cursor: not-allowed !important;
+}
+
+.xxlarge {
+
+    width: 25em;
+}
+
+a {
+    color: #1974d2;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:active {
+    color: #1974d2;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1974d2;
+    text-decoration: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+/**
+ * Loader / Progress
+ */
+#loader {
+    background: #252830;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.logo .icon-spent-time {
+    font-size: 1.8em;
+    color: #1974d2;
+}
+
+#loaderMessage .icon-spent-time {
+    font-size: 1.8em;
+    color: #1974d2;
+}
+
+.brand-name1 {
+    font-size: 1.8em;
+    color: #fff;
+}
+
+.brand-name2 {
+    font-size: 1.8em;
+    color: #1974d2;
+}
+
+#loaderProgressBar {
+
+    width: 400px;
+    margin-top: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loaderMessage {
+    float: left;
+    padding-top: 20px;
+    width: 100%;
+}
+
+/**
+ * Application layout
+ */
+#application {
+    width: 100%;
+    height: 100%;
+}
+
+#appContainer .dijitTabListWrapper {
+    display: none;
+}
+
+#top {
+    height: 25px;
+}
+
+#left {
+    width: 250px;
+    padding-left: 2%;
+    overflow: hidden;
+}
+
+#left.collapsed {
+    width: 70px;
+    padding-left: unset;
+    background-color: #30343E;
+}
+
+#left #menu {
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+#left.collapsed #menu {
+    padding-top: 0px;
+    margin: unset;
+}
+
+#menu .header {
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(65, 70, 85, 1);
+}
+
+#left.collapsed #menu .header {
+
+    display: none;
+}
+
+#menu span.fa {
+    visibility: hidden;
+}
+
+#left.collapsed .dijitFixedClosed:hover {
+    background-color: #434857;
+    border-radius: unset;
+}
+
+#left.collapsed .dijitFixedClosed {
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 17px;
+    border-color: #252830;
+}
+
+#left.collapsed span .title {
+
+    display: none;
+}
+
+#left.collapsed span .fa {
+
+    font-size: 1.5em;
+    color: #cfd2da;
+    visibility: visible;
+}
+
+#collapse-menu {
+
+    padding-top: 70px;
+    height: 35px;
+    padding-left: 14px;
+    background-color: #252830;
+}
+
+#left.collapsed #collapse-menu {
+    background-color: #252830;
+    padding-top: 50px;
+    height: 60px;
+    padding-left: 15px;
+}
+
+#left.collapsed #collapse-menu span {
+    color: #434857;
+}
+
+#left.collapsed #collapse-menu .brand-name1 {
+    visibility: hidden;
+}
+
+#left.collapsed #collapse-menu .brand-name2 {
+    visibility: hidden;
+
+}
+
+#left.collapsed #collapse-menu span {
+
+    font-size: 3em;
+}
+
+#collapse-menu span {
+    cursor: default;
+}
+
+#left.collapsed .selected {
+
+    background-color: #252830;
+}
+
+#left.collapsed .selected .dijitTitlePaneTitle {
+    background-color: unset;
+    border-radius: unset;
+}
+
+#left .dijitTitlePaneTitle {
+
+    width: 190px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    border-radius: 5px;
+}
+
+#left .selected .dijitTitlePaneTitle {
+    color: #fff;
+    background-color: #1974d2;
+}
+
+#left.collapsed .selected .dijitTitlePaneTitle:hover {
+
+    background-color: unset;
+}
+
+#left .selected .dijitTitlePaneTitle:hover {
+
+    background-color: #1974d2;
+}
+
+#left .dijitTitlePaneTitle:hover {
+
+    background-color: #434857;
+
+}
+
+#feedback {
+
+    position: absolute;
+    border-radius: 100px;
+    background-color: #434857;
+    opacity: 0.5;
+    padding: 10px;
+    cursor: pointer;
+    bottom: 12px;
+    left: 10px;
+}
+
+#left.collapsed #feedback {
+    background-color: #232530;
+}
+
+#feedback .fa-comments {
+    font-size: 2em;
+    color: #fff;
+    visibility: visible !important;
+}
+
+#left.collapsed #feedback .fa-comments {
+    color: #434758;
+}
+
+#feedback .fa-comments:hover {
+    color: #cfd2da;
+}
+
+#left.collapsed #feedback .fa-comments:hover {
+    color: #cfd2da;
+}
+
+#feedback-menu {
+
+    position: absolute;
+    bottom: 65px;
+    left: 9px;
+    width: 50px;
+    height: 100px;
+    z-index: 999;
+    border-radius: 5px;
+    border: 1px solid #1974d2;
+}
+
+#feedback-menu .feedback-option .fa {
+    font-size: 2em;
+    cursor: pointer;
+    padding-top: 4px;
+}
+
+#feedback-menu .feedback-option {
+
+    text-align: center;
+    vertical-align: middle;
+
+    height: 40px;
+    margin-top: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius: 2px;
+}
+
+#feedback-menu .feedback-option:hover {
+
+    background-color: #434857;
+}
+
+#screenshot {
+    display: none;
+    overflow: hidden;
+}
+
+#screenshot.fullscreen {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pencil {
+    cursor: url(../images/pencil.png), pointer;
+}
+
+#drawing-toolbar {
+
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    border: 1px solid #1974d2;
+    border-radius: 5px;
+    height: 182px;
+    width: 52px;
+    background-color: #252830;
+    padding: 5px;
+    text-align: center;
+}
+
+#drawing-toolbar .move-handle {
+
+    cursor: move;
+    font-size: 2em;
+    margin-top: -20px;
+    color: #434857;
+    margin-bottom: 5px;
+}
+
+#drawing-toolbar .drawing-option {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    margin-top: 5px;
+    padding-top: 8px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#drawing-toolbar .drawing-option:hover {
+    background-color: #434857;
+}
+
+#drawing-toolbar .drawing-option .fa {
+
+    font-size: 2em;
+
+    vertical-align: middle;
+}
+
+#feedback-send {
+
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+    border: 1px solid #1974d2;
+    width: 500px;
+    height: 300px;
+    background-color: #252830;
+    border-radius: 5px;
+}
+
+#feedback-message {
+
+    color: #fff;
+    margin: 10px;
+    width: 480px;
+    height: 220px !important;
+    font-family: 'Ubuntu', serif;
+    font-size: 14px;
+}
+
+#feedback-image {
+
+    float: right;
+    margin-right: 11px;
+    height: 49px;
+    border: 1px solid #434857;
+}
+
+#feedback-image:hover {
+
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#feedback-send .fa-trash, .fa-send {
+
+    margin-left: 10px;
+    float: left;
+}
+
+#feedback-send .fa-paperclip {
+
+    margin-right: 10px;
+    float: right;
+}
+
+#feedback-send .buttons .fa {
+
+    width: 50px;
+    height: 40px;
+
+    font-size: 2em;
+    border-radius: 5px;
+
+    padding-top: 12px;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+#feedback-send .buttons .fa:hover {
+
+    background-color: #454857;
+}
+
+/**
+ * Login form
+ */
+#login {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: none;
+    background-color: #252830;
+}
+
+#login .form .logo {
+    margin-top: 70px;
+}
+
+#login .form .sign-in {
+
+    padding-top: 20px;
+    padding-bottom: 40px;
+    float: left;
+    width: 100%;
+}
+
+#login .form {
+
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#login .form .social {
+
+    text-align: center;
+}
+
+#login .form .fa {
+
+    width: 100px;
+    padding: 20px;
+    font-size: 5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#login .form .icon-podio {
+
+    width: 200px !important;
+    padding: 20px;
+    font-size: 5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#login .form .icon-podio:hover {
+
+    background-color: #434857;
+
+}
+
+#login .form .fa:hover {
+
+    background-color: #434857;
+
+}
+
+/**
+ * Dashboard
+ */
+
+.template {
+
+    height: 77px;
+    border-bottom: 1px solid #434857;
+    margin-top: 28px;
+    margin-right: 14px;
+    z-index: -9999;
+}
+
+.template .header {
+
+    float: left;
+    width: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(65, 70, 85, 1);
+}
+
+.template .title {
+
+    color: #fff;
+    font-size: 2em;
+}
+
+.template .left {
+
+    float: left;
+    padding-top: 10px;
+}
+
+.template .right {
+
+    float: right;
+    margin-right: 1px;
+    margin-top: 21px;
+}
+
+/**
+ * Tracker
+ */
+
+#root {
+
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    padding-top: 15px;
+    width: 600px !important;
+
+}
+
+#root .welcome {
+
+    padding-top: 40px;
+    float: right;
+}
+
+#root .available {
+
+    padding-bottom: 20px;
+    float: left;
+    width: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(65, 70, 85, 1);
+}
+
+#root .coming {
+
+    padding-top: 30px;
+    padding-bottom: 20px;
+    float: left;
+    width: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(65, 70, 85, 1);
+}
+
+.icon-podio {
+
+    font-size: 3.7em;
+}
+
+.coming-icon {
+
+    float: left;
+    padding-right: 20px;
+}
+
+.available-icon .icon-spent-time {
+
+    color: #1974d2;
+}
+
+.itemTrackerBrowser {
+
+    width: 30%;
+    max-width: 450px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.trackerTreeWrapper {
+
+    padding-top: 7px;
+
+}
+
+.labelInput {
+
+    width: 98%;
+    margin-right: 2%;
+
+    margin-left: 4px;
+}
+
+#itemSelectionMenu {
+
+    display: none;
+
+    margin-left: -20px;
+
+    float: right;
+    width: 200px;
+}
+
+#itemSelectionMenu .fa {
+
+    font-size: 2.4em;
+    float: left;
+    cursor: pointer;
+}
+
+#itemSelectionMenu .fa-ban {
+    color: #d32f2f;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#itemSelectionMenu .fa-check {
+    color: #388e3c;
+    padding: 5px;
+}
+
+#itemSelectionMenu .fa-eraser {
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#itemSelectionMenu .fa:hover {
+
+    background-color: #434857;
+    border-radius: 5px;
+}
+
+.form {
+
+    margin-top: 5px;
+}
+
+.trackerItem {
+
+    overflow: hidden;
+}
+
+.itemTextEditor .dijitToolbar {
+
+    width: 100%;
+}
+
+.dijitToolbar .dijitFontNameCombo {
+
+    width: 150px;
+}
+
+.dijitToolbar .dijitFontSizeCombo {
+
+    width: 100px;
+}
+
+.dijitToolbar .dijitFormatBlockCombo {
+
+    width: 135px;
+}
+
+#projectColor {
+
+    padding-left: 4px;
+    padding-bottom: 2px;
+}
+
+#projectColor .dijitArrowButtonInner {
+
+    padding-bottom: 3px;
+}
+
+.dijitArrowButtonInner:hover {
+
+    color: #1974d2;
+}
+
+#projectColor .dijitIcon {
+
+    font-size: 2.5em !important;
+    margin: 7px 2px 0px -10px;
+}
+
+#colorPalette {
+
+    margin-top: -7px;
+    margin-left: -3px;
+}
+
+#colorPalette .fa {
+
+    cursor: pointer;
+}
+
+#colorPalette .fa:hover {
+
+    transform: scale(1.2)
+}
+
+.dijitPopup {
+
+    border-radius: 5px;
+    border: 1px solid #1974d2;
+    background: unset;
+    background-color: #232832;
+}
+
+.dijitPopup .dijitTooltipContainer {
+
+    background-color: #232832;
+    border: unset;
+}
+
+.itemTabs {
+
+    margin-top: 8px;
+    height: 100%;
+
+}
+
+.itemTabs .dijitTabController {
+
+    border: 1px solid #1974d2;
+    border-radius: 5px;
+    width: unset !important;
+    left: 4px !important;
+    height: 40px;
+}
+
+.itemTabs .dijitTabController div:last-child {
+
+    margin-left: 4px;
+}
+
+.itemTabs .dijitTitlePaneTitle.dijitTitlePaneTitleOpen.dijitOpen .dijitTitlePaneTextNode {
+
+    color: #1974d2;
+}
+
+.itemTabs .dijitTabContainerTabListNested .dijitTab {
+
+    padding-bottom: 5px;
+    margin-top: 3px;
+    height: 23px;
+}
+
+.itemTabs .dijitTabContainerTabListNested.dijitTabContainerTop-tabs .dijitTab {
+
+    float: right;
+}
+
+.tagPalette {
+
+    margin: 20px;
+    height: 200px;
+    width: 150px;
+}
+
+.tagPaletteContainer {
+
+    border: 1px solid #1974d2;
+    background-color: #252830;
+    border-radius: 5px;
+    width: 260px;
+    height: 150px;
+}
+
+.tagPaletteContainerOuter {
+    float: left;
+}
+
+.tagPaletteContainerOuter .fa-plus {
+
+    font-size: 2em;
+    color: #388E3C;
+    cursor: pointer;
+    background-color: #252830;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+
+.tagPaletteContainerOuter .fa-plus:hover {
+
+    background-color: #434857;
+}
+
+.dojoDndAvatar .tag {
+
+    background-color: #434857;
+    border-radius: 2px;
+    margin-top: 5px;
+    width: 208px;
+    height: 26px;
+    text-align: right;
+
+}
+
+.tagPalette .tag {
+
+    background-color: #434857;
+    border-radius: 2px;
+    margin-top: 5px;
+    width: 208px;
+    height: 26px;
+    text-align: right;
+}
+
+.tagPalette .tagRemove {
+
+    display: none;
+}
+
+.dojoDndAvatar .tagRemove {
+
+    display: none;
+}
+
+.dojoDndAvatar .tagKey {
+
+    background-color: #252830;
+    margin-left: 2px;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+.tagPalette .tagKey {
+
+    background-color: #252830;
+    margin-left: 2px;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+.dojoDndAvatar .tagValue {
+
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+.tagPalette .tagValue {
+
+    margin-right: 5px;
+    margin-top: 3px;
+
+}
+
+.tagContainer {
+
+    float: left;
+    width: 99%;
+    min-height: 40px;
+    margin-right: 1%;
+    border: 1px solid #1974d2;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.tagContainer .tag {
+
+    float: left;
+    background-color: #434857;
+    border-radius: 2px;
+    margin-top: 5px;
+    width: 300px;
+    height: 35px;
+    text-align: right;
+    margin-left: 5px;
+    margin-right: 2px;
+}
+
+.tagContainer .tagRemove {
+
+    position: relative;
+    right: -10px;
+    top: -20px;
+    height: 0px;
+    display: none;
+}
+
+.tagContainer .tagRemove .fa {
+
+    z-index: 9;
+}
+
+.tagContainer .tag:hover .tagRemove {
+
+    display: block;
+}
+
+.tagContainer .fa {
+
+    border-radius: 100px;
+    border: 1px solid #1974d2;
+    background-color: #1974d2;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.tagContainer .tagKey .dijitValidationTextBox {
+
+    width: 100px;
+    margin-top: 2px;
+    margin-left: 2px;
+    background-color: #252830;
+    float: left;
+    border-radius: 5px;
+}
+
+.tagContainer .tagValue {
+
+    margin-right: 20px;
+    padding-top: 5px;
+}
+
+.tagContainer .tagValue:hover {
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tagContainer .tagEditor .dijitTextBox.dijitValidationTextBox {
+
+    width: 190px;
+    float: right;
+    margin-top: 2px;
+}
+
+.tagContainer .tagEditor .dijitSpinner.dijitNumberTextBox {
+
+    width: 180px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.tagContainer .tagEditor .mblSwitch {
+
+    margin-top: 4px;
+    margin-left: 10px;
+    float: left;
+}
+
+/**
+ * Settings
+ * dijitTabController dijitTabContainerTop-tabs dijitTabContainerTabListNested dijitAlignTop
+ */
+.settingsTabContainer .dijitTabController {
+
+    border: 1px solid #1974d2;
+    border-radius: 5px;
+    width: unset !important;
+    left: unset !important;
+    right: 15px;
+    top: -57px !important;
+    height: 40px;
+}
+
+.settingsTabContainer .dijitTabController div:first-child {
+
+    margin-left: 4px;
+}
+
+.settingsTabContainer .dijitTitlePaneTitle.dijitTitlePaneTitleOpen.dijitOpen .dijitTitlePaneTextNode {
+
+    color: #1974d2;
+}
+
+.settingsTabContainer .dijitTabPaneWrapper {
+
+    top: 0 !important;
+}
+
+.settingsTabContainer .dijitTabContainerTabListNested .dijitTab {
+
+    padding-bottom: 5px;
+    margin-top: 3px;
+    height: 23px;
+}
+
+.section .input-group .dijitTitlePaneTitle {
+
+    width: 250px;
+}
+
+.section .input-group .dijitTitlePaneTextNode {
+
+    width: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(65, 70, 85, 1);
+
+}
+
+.section .input-group .dijitTitlePaneContentInner {
+
+    padding-top: 10px;
+    margin-left: 50px;
+}
+
+.section .input-pair {
+
+    padding-bottom: 5px;
+}
+
+.section .input-pair label {
+
+    display: inline-block;
+    width: 200px;
+}
+
+.dijitDropDownButton .dijitButtonNode {
+
+    border: unset;
+}
+
+/**
+ * Reporting
+ *
+ */
+/**
+ * Settings
+ * dijitTabController dijitTabContainerTop-tabs dijitTabContainerTabListNested dijitAlignTop
+ */
+.reportsTabContainer .dijitTabController {
+
+    border: 1px solid #1974d2;
+    border-radius: 5px;
+    width: unset !important;
+    left: unset !important;
+    right: 15px;
+    top: -57px !important;
+    height: 40px;
+    display: none;
+}
+
+.reportsTabContainer .dijitTabController div:first-child {
+
+    margin-left: 4px;
+}
+
+.reportsTabContainer .dijitTitlePaneTitle.dijitTitlePaneTitleOpen.dijitOpen .dijitTitlePaneTextNode {
+
+    color: #1974d2;
+}
+
+.reportsTabContainer .dijitTabContainerTabListNested .dijitTab {
+
+    padding-bottom: 5px;
+    margin-top: 3px;
+    height: 23px;
+}
+
+.pdfViewer {
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.dijitTooltipDialog {
+
+    padding: 0;
+    margin: 0;
+}
+
+.dijitTooltipDialog .dijitTooltipConnector {
+    display: none !important;
+}
+
+.dijitTooltipDialog .dijitIcon {
+
+    cursor: pointer;
+}
+
+.colorPickerDropDown {
+
+    padding-left: 4px;
+    padding-bottom: 2px;
+}
+
+.colorPickerDropDown .dijitArrowButtonInner {
+
+    padding-bottom: 3px;
+}
+
+.dijitArrowButtonInner:hover {
+
+    color: #1974d2;
+}
+
+.colorPickerDropDown .dijitIcon {
+
+    font-size: 2.5em !important;
+    margin: 7px 2px 0px -10px;
+}
+
+.colorPalette {
+
+    margin-top: -7px;
+    margin-left: -3px;
+}
+
+.colorPalette .fa {
+
+    cursor: pointer;
+}
+
+.colorPalette .fa:hover {
+
+    transform: scale(1.2)
+}
+
+#reportingToolbar {
+
+    margin-right: 10px;
+    height: 38px;
+}
+
+#reportingToolbar span.fa-file-code-o, .fa-file-excel-o, .fa-file-pdf-o {
+    float: right;
+    font-size: 2em;
+    padding-left: 6px;
+    padding-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+#reportingToolbar span.fa:hover {
+
+    background-color: #434857;
+}
+
+#reportingToolbar label {
+
+    padding-left: 20px;
+}
+
+#reportingToolbar .fa-refresh {
+    font-size: 1.1em;
+    margin-left: 5px;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 9px;
+    padding-bottom: 7px;
+}
+
+#reportingToolbar .divider {
+
+    position: absolute;
+    display: inline;
+    border-right: 1px solid #434857;
+    height: 38px;
+    margin-left: 10px;
+}
+
+#reportingToolbar .dijitDateTextBox {
+    margin: 7px;
+}
+
+#reportingToolbar .fa-bolt {
+    font-size: 1.1em;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#reportingToolbarContainer {
+
+    height: 70px !important;
+}
+
+.reportsTabContainer .dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter {
+
+    top: 5px !important;
+}
+
+#outputToolbar {
+
+    margin-right: 10px;
+    height: 38px;
+}
+
+#outputToolbar .fa {
+
+    padding-top: 2px;
+    padding-left: 5px;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+#outputToolbarContainer {
+
+    height: 70px !important;
+}
+
+.dijitTabContainerTop-dijitContentPane {
+
+    overflow: hidden;
+}

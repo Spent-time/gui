@@ -1,0 +1,110 @@
+/* NumberSpinner - namespace "dijitSpinner"
+ * 
+ * Styling NumberSpinner mainly includes:
+ * 
+ * 1. Arrows
+ * 		Outer containers: .dijitSpinnerButtonContainer|.dijitSpinnerButtonInner  - for border, padding and position
+ * 		Arrows: .dijitArrowButton|.dijitUpArrowButton.|dijitDownArrowButton
+ * 		Inner container: .dijitArrowButtonInner - for border, padding, width|height and background image
+ * 
+ * 2. Hover state
+ * 		.dijitUpArrowButtonHover|.dijitDownArrowButtonHover .*  - for background color|image
+ * 
+ * 3. Active state
+ * 		.dijitUpArrowButtonActive|.dijitDownArrowButtonActive .*  - for border, padding, margin and background color|image
+ * 
+ * 4. Focused state
+ * 		.dijitSpinnerFocused .* - for background color|image
+ * 
+ * 5. Disabled state
+ * 		.dijitSpinnerDisabled .* - for background color|image
+ */
+.dijitSpinner {
+
+    width: 80px;
+}
+
+.dijitSpinnerButtonContainer {
+
+    border: 0;
+}
+
+.dijitSpinner .dijitSpinnerButtonContainer {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    padding: 0;
+}
+
+.dijitSpinner .dijitSpinnerButtonInner {
+    width: 28px;
+    padding: 4px;
+    margin: 0;
+}
+
+.dijitSpinner .dijitArrowButton {
+    padding: 4px 12px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    line-height: 20px;
+    cursor: pointer;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+    width: auto;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    padding: 0;
+}
+
+.dijitSpinner .dijitArrowButton:before {
+    content: none;
+}
+
+.dijitSpinner .dijitUpArrowButton {
+
+}
+
+.dijitSpinner .dijitDownArrowButton {
+
+}
+
+.dijitSpinner .dijitUpArrowButtonHover,
+.dijitSpinner .dijitDownArrowButtonHover {
+    font-size: 1.2em;
+    color: #1974d2;
+}
+
+.dijitSpinner .dijitDownArrowButtonActive,
+.dijitSpinner .dijitUpArrowButtonActive {
+    outline: none;
+}
+
+.dijitSpinner .dijitArrowButtonInner {
+    line-height: 14px;
+    display: block;
+}
+
+.dijitSpinner .dijitArrowButtonInner .dijitInputField {
+    padding: 0;
+}
+
+.dijitSpinner .dijitArrowButtonInner:before {
+    content: "\f0d8";
+}
+
+.dijitSpinner .dijitDownArrowButton .dijitArrowButtonInner:before {
+    content: "\f0d7";
+}
+
+/* disabled */
+.dijitSpinnerDisabled .dijitDownArrowButton,
+.dijitSpinnerDisabled .dijitUpArrowButton {
+    cursor: default;
+    opacity: 0.65;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+    filter: alpha(opacity=65);
+}

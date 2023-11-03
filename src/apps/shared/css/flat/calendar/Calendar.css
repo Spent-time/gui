@@ -1,0 +1,121 @@
+@import 'ColumnView.css';
+@import 'EventColors.css';
+@import 'MatrixView.css';
+
+.dojoxCalendar .buttonContainer {
+
+    position: fixed;
+
+    top: 55px;
+    right: 0 !important;
+    left: unset !important;
+
+    margin-right: 20px;
+}
+
+.dojoxCalendar .viewContainer {
+    position: absolute;
+    left: 5px;
+    right: 18px;
+    top: 125px;
+    bottom: 13px;
+    overflow: hidden
+}
+
+.dojoxCalendar .view {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 0
+}
+
+.dojoxCalendar .buttonContainer .todayButton {
+    display: none;
+}
+
+.dojoxCalendarEvent:hover {
+
+    z-index: 999999 !important;
+}
+
+.dojoxCalendarEvent:hover {
+
+    min-height: 70px !important;
+}
+
+.dojoxCalendarEvent.Hovered .bg {
+
+    opacity: 1 !important;
+}
+
+.dojoxCalendarEvent:hover dd.startTime {
+
+    display: block !important;
+}
+
+.dojoxCalendarEvent:hover dd.endTime {
+
+    top: 23px !important;
+    display: block !important;
+}
+
+dd.summary {
+    cursor: pointer;
+}
+
+dd.summary:hover {
+    color: #cfd2da;
+}
+
+.dojoxCalendarEvent:hover dd.summary {
+
+    top: 23px !important;
+    display: block !important;
+}
+
+.dojoxCalendar .totalDay {
+
+    border-radius: 5px;
+    background-color: #1974d2;
+    color: #fff;
+    z-index: 999;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: -8px;
+}
+
+.dojoxCalendar .totalWeek {
+
+    background-color: #1974d2;
+    border-radius: 5px;
+    color: #ffffff;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-top: -12px;
+}
+
+.timeTrackButton {
+
+    cursor: pointer;
+    text-align: center;
+    background-color: #1974d2;
+    color: #fff;
+    padding-bottom: 2px;
+    margin-right: 2px;
+    border-radius: 5px;
+    margin-top: 3px;
+    width: 50px;
+    float: right;
+    border: 1px solid #1974d2;
+}
+
+.timeTrackButton:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+

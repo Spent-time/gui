@@ -1,0 +1,374 @@
+<div>
+    <script type="dojo/require">at: "dojox/mvc/at"</script>
+
+    <div class="template">
+
+        <div class="left">
+            <span class="header">${i18n.settings.header}</span>
+            <span class="title">${i18n.settings.title}</span>
+        </div>
+
+        <!--div data-dojo-type="dijit/Toolbar" class="right">
+        </div-->
+    </div>
+
+    <div data-dojo-attach-point="settingsContainer"
+         data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="nested: true"
+         class="settingsTabContainer"
+         style="height: 400px;">
+
+        <div data-dojo-type="dijit/layout/ContentPane"
+             data-dojo-props="title:this.i18n.general.title"
+             class="section">
+
+            <div data-dojo-type="dojox/widget/TitleGroup">
+
+                <!--div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="open:true"
+                     title="${i18n.general.setting.appearance.title}"
+                     class="input-group">
+
+                    @todo the appearance block.
+                    <div class="input-pair">
+                        <label>${i18n.general.setting.appearance.theme.label}</label>
+                        <select id="general.theme"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="Ligth">${i18n.general.setting.appearance.theme.light}</option>
+                            <option value="Dark">${i18n.general.setting.appearance.theme.dark}</option>
+                        </select>
+                    </div>
+
+                    <div class="input-pair">
+                        <label>${i18n.general.setting.appearance.menu.label}</label>
+                        <select id="general.initialMenuState"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="Collapsed">${i18n.general.setting.appearance.menu.collapsed}</option>
+                            <option value="Expanded">${i18n.general.setting.appearance.menu.expanded}</option>
+                        </select>
+                    </div>
+
+                </div-->
+
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="open:true"
+                     title="${i18n.general.setting.locale.title}"
+                     class="input-group">
+
+                    <div class="input-pair">
+                        <label>${i18n.general.setting.locale.language.label}</label>
+                        <select id="general.locale.language"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="en">${i18n.general.setting.locale.language.en}</option>
+                            <!--option value="de">${i18n.general.setting.locale.language.de}</option>
+                            <option value="es">${i18n.general.setting.locale.language.es}</option>
+                            <option value="fr">${i18n.general.setting.locale.language.fr}</option>
+                            <option value="it">${i18n.general.setting.locale.language.it}</option>
+                            <option value="ja">${i18n.general.setting.locale.language.ja}</option>
+                            <option value="nl">${i18n.general.setting.locale.language.nl}</option>
+                            <option value="pt">${i18n.general.setting.locale.language.pt}</option>
+                            <option value="ru">${i18n.general.setting.locale.language.ru}</option>
+                            <option value="zh">${i18n.general.setting.locale.language.zh}</option-->
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--
+            Time Tracker settings
+        -->
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:this.i18n.timeTracker.title"
+             class="section">
+
+            <div data-dojo-type="dojox/widget/TitleGroup">
+
+                <!--
+                    GRID
+                -->
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="open:true"
+                     class="input-group"
+                     title="${i18n.timeTracker.setting.grid.title}">
+
+                    <!--
+                        Defaulty Calendar view
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.grid.dateInterval.label}</label>
+                        <select id="timeTracker.grid.dateInterval"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="day">${i18n.timeTracker.setting.grid.dateInterval.day}</option>
+                            <option value="week">${i18n.timeTracker.setting.grid.dateInterval.week}</option>
+                            <option value="month">${i18n.timeTracker.setting.grid.dateInterval.month}</option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.grid.dateInterval', position:['above']">
+                            ${i18n.timeTracker.setting.grid.dateInterval.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Snap to grid dragging
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.grid.snapSteps.label}</label>
+                        <input id="timeTracker.grid.snapSteps"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="constraints:{min:1,places:0}">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.grid.snapSteps', position:['above']">
+                            ${i18n.timeTracker.setting.grid.snapSteps.tooltip}
+                        </div>
+
+                        &nbsp;
+
+                        <select id="timeTracker.grid.snapUnit"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="minute">${i18n.timeTracker.setting.grid.snapUnit.minute}</option>
+                            <option value="hour">${i18n.timeTracker.setting.grid.snapUnit.hour}</option>
+                            <option value="day">${i18n.timeTracker.setting.grid.snapUnit.day}</option>
+                        </select>
+
+                    </div>
+
+                    <!--
+                        Display time tracking indicator with start/stop button
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.grid.showTimeIndicator.label}</label>
+                        <input id="timeTracker.grid.showTimeIndicator"
+                               data-dojo-type="dijit/form/CheckBox">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.grid.showTimeIndicator', position:['above']">
+                            ${i18n.timeTracker.setting.grid.showTimeIndicator.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Time tracking indicator refresh interval
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.label}</label>
+                        <select id="timeTracker.grid.timeIndicatorRefreshInterval"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="1">${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.F1}</option>
+                            <option value="5">${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.F5}</option>
+                            <option value="15">${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.F15}
+                            </option>
+                            <option value="30">${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.F30}
+                            </option>
+                            <option value="60">${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.F60}
+                            </option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.grid.timeIndicatorRefreshInterval', position:['above']">
+                            ${i18n.timeTracker.setting.grid.timeIndicatorRefreshInterval.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Row header Time Format
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.grid.rowHeaderTimePattern.label}</label>
+                        <select id="timeTracker.grid.rowHeaderTimePattern"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="browser">${i18n.timeTracker.setting.grid.rowHeaderTimePattern.browser}
+                            </option>
+                            <option value="H'h'">${i18n.timeTracker.setting.grid.rowHeaderTimePattern.hh}</option>
+                            <option value="H'h'mm">${i18n.timeTracker.setting.grid.rowHeaderTimePattern.hhmm}</option>
+                            <option value="h:mma">${i18n.timeTracker.setting.grid.rowHeaderTimePattern.hmma}</option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.grid.rowHeaderTimePattern', position:['above']">
+                            ${i18n.timeTracker.setting.grid.rowHeaderTimePattern.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Column header date format
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.grid.columnHeaderDatePattern.label}</label>
+                        <select id="timeTracker.grid.columnHeaderDatePattern"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="browser">${i18n.timeTracker.setting.grid.columnHeaderDatePattern.browser}
+                            </option>
+                            <option value="EEE, MMM dd" selected="selected">
+                                ${i18n.timeTracker.setting.grid.columnHeaderDatePattern.F1}
+                            </option>
+                            <option value="MMM dd">${i18n.timeTracker.setting.grid.columnHeaderDatePattern.F2}</option>
+                            <option value="MM dd yyyy">${i18n.timeTracker.setting.grid.columnHeaderDatePattern.F3}
+                            </option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.grid.columnHeaderDatePattern', position:['above']">
+                            ${i18n.timeTracker.setting.grid.columnHeaderDatePattern.tooltip}
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--
+                    DURATION
+                -->
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="open:false"
+                     title="${i18n.timeTracker.setting.duration.title}"
+                     class="input-group">
+
+                    <!--
+                        First day of week
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.duration.firstDayOfWeek.label}</label>
+                        <select id="timeTracker.duration.firstDayOfWeek"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="-1">${i18n.timeTracker.setting.duration.firstDayOfWeek.browser}</option>
+                            <option value="0">${i18n.timeTracker.setting.duration.firstDayOfWeek.sunday}</option>
+                            <option value="1">${i18n.timeTracker.setting.duration.firstDayOfWeek.monday}</option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.firstDayOfWeek', position:['above']">
+                            ${i18n.timeTracker.setting.duration.firstDayOfWeek.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Working day start time
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.duration.startTimeOfDay.label}</label>
+                        <input id="timeTracker.duration.startTimeOfDay.hours"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="required:true,
+                                                constraints:{min:0,max:23,places:0},
+                                                missingMessage:this.i18n.timeTracker.setting.duration.startTimeOfDayHourMising,
+                                                rangeMessage:this.i18n.timeTracker.setting.duration.startTimeOfDayHourRange,
+                                                invalidMessage:this.i18n.timeTracker.setting.duration.startTimeOfDayHourInvalid">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.startTimeOfDay.hours', position:['above']">
+                            ${i18n.timeTracker.setting.duration.startTimeOfDay.hours.tooltip}
+                        </div>
+
+                        &nbsp;
+
+                        <input id="timeTracker.duration.startTimeOfDay.minutes"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="constraints:{min:0,max:59,places:0}">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.startTimeOfDay.minutes', position:['above']">
+                            ${i18n.timeTracker.setting.duration.startTimeOfDay.minutes.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Start hours in time tracker
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.duration.minHours.label}</label>
+                        <input id="timeTracker.duration.minHours"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="constraints:{min:0,max:23,places:0}">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.minHours', position:['above']">
+                            ${i18n.timeTracker.setting.duration.minHours.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        End hours in time tracker
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.duration.maxHours.label}</label>
+                        <input id="timeTracker.duration.maxHours"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="constraints:{min:1,max:24,places:0}">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.maxHours', position:['above']">
+                            ${i18n.timeTracker.setting.duration.maxHours.tooltip}
+                        </div>
+                    </div>
+
+                    <!--
+                        Minimum event time slot
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.duration.minDuration.label}</label>
+                        <input id="timeTracker.duration.minDuration"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="constraints:{min:1,places:0}">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.minDuration', position:['above']">
+                            ${i18n.timeTracker.setting.duration.minDuration.tooltip}
+                        </div>
+
+                        &nbsp;
+
+                        <select id="timeTracker.duration.minDurationUnit"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="minute">${i18n.timeTracker.setting.duration.minDurationUnit.minute}</option>
+                            <option value="hour">${i18n.timeTracker.setting.duration.minDurationUnit.hour}</option>
+                            <option value="day">${i18n.timeTracker.setting.duration.minDurationUnit.day}</option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.minDurationUnit', position:['above']">
+                            ${i18n.timeTracker.setting.duration.minDurationUnit.tooltip}
+                        </div>
+
+                    </div>
+
+                    <!--
+                        Minimum time adition
+                    -->
+                    <div class="input-pair">
+                        <label>${i18n.timeTracker.setting.duration.minDurationSteps.label}</label>
+                        <input id="timeTracker.duration.minDurationSteps"
+                               data-dojo-type="dijit/form/NumberSpinner"
+                               data-dojo-props="constraints:{min:1,places:0}">
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.minDurationSteps', position:['above']">
+                            ${i18n.timeTracker.setting.duration.minDurationSteps.tooltip}
+                        </div>
+
+                        &nbsp;
+
+                        <select id="timeTracker.duration.minDurationStepsUnit"
+                                data-dojo-type="dijit/form/Select">
+                            <option value="minute">${i18n.timeTracker.setting.duration.minDurationStepsUnit.minute}
+                            </option>
+                            <option value="hour">${i18n.timeTracker.setting.duration.minDurationStepsUnit.hour}</option>
+                            <option value="day">${i18n.timeTracker.setting.duration.minDurationStepsUnit.day}</option>
+                        </select>
+                        <div data-dojo-type="dijit/Tooltip"
+                             data-dojo-props="connectId:'timeTracker.duration.minDurationStepsUnit', position:['above']">
+                            ${i18n.timeTracker.setting.duration.minDurationStepsUnit.tooltip}
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:this.i18n.itemTracker.title"
+             class="section">
+
+        </div-->
+
+        <!--div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:this.i18n.reports.title" class="section">
+
+        </div-->
+
+        <!--div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:this.i18n.account.title" class="section">
+
+        </div-->
+
+    </div>
+
+</div>

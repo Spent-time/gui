@@ -1,0 +1,25 @@
+{
+  "name": "spent-time-apps",
+  "version": "0.0.1",
+  "main": "main",
+  "dependencies": {
+    "dojo": "^1.11.2",
+    "dijit": "^1.11.2",
+    "dojox": "^1.11.2"
+  },
+  "description": "Spent Time",
+  "license": "@todo",
+  "bugs": "https://bitbucket.org/spent-time/apps/issues",
+  "keywords": [
+    "Spent",
+    "Time",
+    "Tracking"
+  ],
+  "homepage": "http://spent-time.com",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/spent-time/apps.git"
+  },
+  "dojoBuild": "package.js"
+}
+

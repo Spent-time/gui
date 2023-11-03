@@ -1,0 +1,83 @@
+<div>
+
+    <script type="dojo/require">at: "dojox/mvc/at"</script>
+
+    <div class="template">
+
+        <div class="left">
+            <span class="header">${i18n.account.header}</span>
+            <span class="title">${i18n.account.title}</span>
+        </div>
+
+    </div>
+
+    <div data-dojo-attach-point="settingsContainer"
+         data-dojo-type="dijit/layout/TabContainer"
+         data-dojo-props="nested: true"
+         class="settingsTabContainer"
+         style="height: 400px;">
+
+        <div data-dojo-type="dijit/layout/ContentPane"
+             data-dojo-props="title:this.i18n.account.setting.general.title"
+             class="section">
+
+            <div data-dojo-type="dojox/widget/TitleGroup">
+
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="open:true"
+                     title="${i18n.account.setting.general.user}"
+                     class="input-group">
+
+                    <div class="input-pair">
+                        <label>${i18n.account.setting.general.id}</label>
+                        <span data-dojo-type="dojox/mvc/Output" data-dojo-props="value: at(this.user, 'id')"></span>
+                    </div>
+
+                    <div class="input-pair">
+                        <label>${i18n.account.setting.general.email}</label>
+                        <span data-dojo-type="dojox/mvc/Output" data-dojo-props="value: at(this.user, 'email')"></span>
+                    </div>
+
+                    <div class="input-pair">
+                        <label>${i18n.account.setting.general.subscription}</label>
+                        <span data-dojo-type="dojox/mvc/Output"
+                              data-dojo-props="value: at(this.user, 'subscription')"></span>
+                    </div>
+
+                    <div class="input-pair">
+                        <label>${i18n.account.setting.general.active}</label>
+                        <span data-dojo-type="dojox/mvc/Output" data-dojo-props="value: at(this.user, 'active')"></span>
+                    </div>
+
+                    <div class="input-pair">
+                        <label>${i18n.account.setting.general.provider}</label>
+                        <span data-dojo-type="dojox/mvc/Output"
+                              data-dojo-props="value: at(this.user, 'provider')"></span>
+                    </div>
+
+                    <div class="input-pair">
+                        <label>${i18n.account.setting.general.signout}</label>
+                        <div class="logout">
+                            <span data-dojo-attach-point="logout" class="fa fa-sign-out fa-2x"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane"
+             data-dojo-props="title:this.i18n.account.setting.data.title"
+             class="section">
+
+            Export / Import
+
+        </div>
+
+    </div>
+
+
+</div>
